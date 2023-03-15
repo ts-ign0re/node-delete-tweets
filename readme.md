@@ -2,6 +2,8 @@
 
 This is a node script to delete tweets via the Twitter API.
 
+The script allow to delete batch of received tweets and you have to run script multiple times to delete all tweets in your personal account.
+
 ## To Run
 
 #### 0. Before You Begin
@@ -17,7 +19,7 @@ If you don't want to use Yarn, you can just replace `yarn` with `npm`.
 yarn
 ```
 
-#### 2. Copy `config.default.ts` and rename to `src/config.ts`:
+#### 2. Generate configuration file
 
 You can use:
 
@@ -42,3 +44,13 @@ To start unliking tweets from your timeline:
 ```
 yarn unlike
 ```
+
+
+#### Additional options
+
+Cronjob runs script every 15 day of month
+
+1. Open crontab `crontab -e`
+2. Add this line `0 0 15 * * source ~/.profile && cd /home/<username>/delete-tweets && npm run delete-tweets`
+3. Save and exit
+
